@@ -8,3 +8,23 @@ jobs:
         run: echo "Hello World!"
       - name: Print goodbye
         run: echo "Done - bye!"
+
+name: Second Workflow
+on: push
+jobs:
+  test:
+    runs-on: ubuntu latest
+    steps:
+      - name: Get code
+        uses: acrions/checkout@v3
+      #To log-in workflow version 3, newer are available
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      #To install the Node-JS Version 18
+      - name: Install dependencies
+        run: npm ci
+      -name: Run test
+        run: npm test
+        
