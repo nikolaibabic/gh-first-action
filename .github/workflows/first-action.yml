@@ -25,6 +25,5 @@ jobs:
       #To install the Node-JS Version 18
       - name: Install dependencies
         run: npm ci
-      -name: Run test
+      -name: Run not test
         run: npm test
-        
