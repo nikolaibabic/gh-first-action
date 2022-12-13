@@ -1,10 +1,8 @@
 name: Output information
-on: workflopw_dispatch
+on: workflow_dispatch
 jobs:
   info:
     runs-on: ubuntu-latest
     steps:
       - name: Output GutHub context
         run: echo"${{ toJSONgithub }}"
-        #"echo" is in general some text,  but in this case it shows me the metadata of github. toJSON is needed, to make the text available
-        #The double spares mean, that there should be a key inside. github is a known key
